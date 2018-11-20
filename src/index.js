@@ -6,6 +6,12 @@ const StatusPrefix = 'status-files';
 
 const targets = [
 	{ localPath: '/var/lib/dhcpd/dhcpd.leases', key: `${StatusPrefix}/dhcpd.leases` },
+	{ localPath: '/var/log/system-data.json', key: `${StatusPrefix}/system-data.json` },
+	{ localPath: '/var/log/iptstate.txt', key: `${StatusPrefix}/iptstate.txt` },
+
+	{ localPath: '/lib/systemd/system/config-copy.service', key: `${StatusPrefix}/config-copy.service` },
+	{ localPath: '/lib/systemd/system/tail2s3.service', key: `${StatusPrefix}/tail2s3.service` },
+	{ localPath: '/lib/systemd/system/stats-generator.service', key: `${StatusPrefix}/stats-generator.service` },
 ];
 
 const s3 = new AWS.S3();
